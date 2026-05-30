@@ -144,7 +144,7 @@
                     android:id="@+id/textViewGithubUrl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="https://github.com/YOURUSERNAME/YOURREPO"
+                    android:text="https://github.com/rajasyahirahaqila/Electricity_Bill_Estimator"
                     android:textSize="13sp"
                     android:textColor="@color/colorPrimary"
                     android:textStyle="bold"

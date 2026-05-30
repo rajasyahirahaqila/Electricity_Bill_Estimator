@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Electricity Bill Estimator</string>
+
+    <!-- Main Screen Labels -->
+    <string name="label_select_month">Select Month</string>
+    <string name="label_unit">Electricity Unit Used (kWh)</string>
+    <string name="label_unit_hint">Enter units (1 – 1000)</string>
+    <string name="label_rebate">Rebate Percentage</string>
+    <string name="label_rebate_value">Rebate: 0%</string>
+
+    <!-- Buttons -->
+    <string name="btn_calculate">Calculate</string>
+    <string name="btn_save">Save Record</string>
+    <string name="btn_history">View History</string>
+
+    <!-- Output Labels -->
+    <string name="label_total_charges">Total Charges:</string>
+    <string name="label_final_cost">Final Cost After Rebate:</string>
+    <string name="label_result_placeholder">RM 0.00</string>
+    <string name="label_results_title">Calculation Results</string>
+
+    <!-- Instructions -->
+    <string name="instruction_main">How to use: Select a month, enter your electricity
+        usage in kWh (1–1000), then adjust the rebate slider.
+        Press Calculate to see your bill estimate.</string>
+
+    <!-- Months Array (used in Spinner) -->
+    <string-array name="months_array">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+</resources>

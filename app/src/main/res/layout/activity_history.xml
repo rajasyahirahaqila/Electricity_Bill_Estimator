@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/backgroundColor"
+    tools:context=".HistoryActivity">
+
+    <!-- Empty state (shown when no records) -->
+    <LinearLayout
+        android:id="@+id/layoutEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        android:padding="28dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚡"
+            android:textSize="64sp"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Records Yet"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/textPrimary"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculate and save a bill first!"
+            android:textSize="15sp"
+            android:textColor="@color/textSecondary"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+
+    <!-- Header row — only shown when records exist -->
+    <LinearLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/cardBackground"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Saved Records"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/textPrimary"/>
+
+        <TextView
+            android:id="@+id/textViewRecordCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 records"
+            android:textSize="13sp"
+            android:textColor="@color/textSecondary"/>
+
+    </LinearLayout>
+
+    <!-- Divider below header -->
+    <View
+        android:id="@+id/viewDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryLight"
+        android:visibility="gone"/>
+
+    <!-- ListView fills remaining space -->
+    <ListView
+        android:id="@+id/listViewBills"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp"
+        android:clipToPadding="false"
+        android:visibility="gone"/>
+
+</LinearLayout>

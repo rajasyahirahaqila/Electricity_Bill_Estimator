@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.electricitybillestimator">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ElectricityBillEstimator">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".HistoryActivity"
+            android:label="Bill History"
+            android:parentActivityName=".MainActivity"/>
+
+        <activity
+            android:name=".DetailActivity"
+            android:label="Bill Detail"
+            android:parentActivityName=".HistoryActivity"/>
+
+        <activity
+            android:name=".EditActivity"
+            android:label="Edit Record"
+            android:parentActivityName=".DetailActivity"/>
+
+        <activity
+            android:name=".About"
+            android:label="About"
+            android:parentActivityName=".MainActivity"/>
+
+    </application>
+
+</manifest>

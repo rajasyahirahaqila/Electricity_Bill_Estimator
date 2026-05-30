@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".DetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- ── HEADER CARD (Month + Icon) ── -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="28dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚡"
+                    android:textSize="48sp"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:id="@+id/textViewDetailMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="January"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textWhite"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bill Details"
+                    android:textSize="14sp"
+                    android:textColor="#B3FFFFFF"
+                    android:layout_marginTop="4dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- ── DETAILS CARD ── -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/cardBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bill Information"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Unit Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="14dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Electricity Unit"
+                        android:textSize="15sp"
+                        android:textColor="@color/textSecondary"/>
+
+                    <TextView
+                        android:id="@+id/textViewDetailUnit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="150 kWh"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textPrimary"/>
+
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimaryLight"
+                    android:layout_marginBottom="14dp"/>
+
+                <!-- Rebate Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="14dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Rebate Applied"
+                        android:textSize="15sp"
+                        android:textColor="@color/textSecondary"/>
+
+                    <TextView
+                        android:id="@+id/textViewDetailRebate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5%"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textPrimary"/>
+
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimaryLight"
+                    android:layout_marginBottom="14dp"/>
+
+                <!-- Total Charges Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="14dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Total Charges"
+                        android:textSize="15sp"
+                        android:textColor="@color/textSecondary"/>
+
+                    <TextView
+                        android:id="@+id/textViewDetailTotalCharges"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RM 0.00"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textPrimary"/>
+
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimaryLight"
+                    android:layout_marginBottom="14dp"/>
+
+                <!-- Final Cost Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/resultBackground"
+                    android:padding="10dp"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Final Cost"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/resultText"/>
+
+                    <TextView
+                        android:id="@+id/textViewDetailFinalCost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RM 0.00"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/resultText"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ── ACTION BUTTONS ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonEdit"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="✏️  Edit"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/textWhite"
+                android:backgroundTint="@color/buttonCalculate"
+                android:layout_marginEnd="8dp"
+                app:cornerRadius="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonDelete"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="🗑️  Delete"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/textWhite"
+                android:backgroundTint="#D32F2F"
+                app:cornerRadius="10dp"/>
+
+        </LinearLayout>
+
+        <!-- Bottom spacing -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="24dp"/>
+
+    </LinearLayout>
+</ScrollView>

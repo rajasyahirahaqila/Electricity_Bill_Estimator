@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="28dp">
+
+        <!-- ===================== INSTRUCTION CARD ===================== -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/colorPrimaryLight"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@android:drawable/ic_dialog_info"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="Info icon"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/instruction_main"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:lineSpacingExtra="3dp"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ===================== INPUT CARD ===================== -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/cardBackground"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Card Title -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Bill Details"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- - MONTH SPINNER - -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_select_month"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textPrimary"
+                    android:layout_marginBottom="6dp"/>
+
+                <Spinner
+                    android:id="@+id/spinnerMonth"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/spinner_background"
+                    android:layout_marginBottom="16dp"
+                    android:padding="8dp"
+                    android:spinnerMode="dropdown"/>
+
+                <!-- - UNIT INPUT - -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_unit"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textPrimary"
+                    android:layout_marginBottom="6dp"/>
+
+                <EditText
+                    android:id="@+id/editTextUnit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/label_unit_hint"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/edittext_background"
+                    android:padding="12dp"
+                    android:layout_marginBottom="4dp"
+                    android:maxLines="1"
+                    android:imeOptions="actionDone"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="⚡ Valid range: 1 – 1000 kWh"
+                    android:textSize="12sp"
+                    android:textColor="@color/textSecondary"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- - REBATE SEEKBAR - -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="6dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/label_rebate"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textPrimary"/>
+
+                    <TextView
+                        android:id="@+id/textViewRebateValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_rebate_value"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary"/>
+
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/seekBarRebate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="5"
+                    android:progress="0"
+                    android:layout_marginBottom="4dp"
+                    android:progressTint="@color/seekBarColor"
+                    android:thumbTint="@color/colorPrimary"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="0%"
+                        android:textSize="12sp"
+                        android:textColor="@color/textSecondary"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5%"
+                        android:textSize="12sp"
+                        android:textColor="@color/textSecondary"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ===================== BUTTONS ===================== -->
+        <Button
+            android:id="@+id/buttonCalculate"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="@string/btn_calculate"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/textWhite"
+            android:backgroundTint="@color/buttonCalculate"
+            android:layout_marginBottom="10dp"
+            app:cornerRadius="10dp"/>
+
+        <!-- ===================== RESULT CARD ===================== -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/resultBackground"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_results_title"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/resultText"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Total Charges Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/label_total_charges"
+                        android:textSize="15sp"
+                        android:textColor="@color/textPrimary"/>
+
+                    <TextView
+                        android:id="@+id/textViewTotalCharges"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_result_placeholder"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/resultText"/>
+
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#C8E6C9"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Final Cost Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/label_final_cost"
+                        android:textSize="15sp"
+                        android:textColor="@color/textPrimary"/>
+
+                    <TextView
+                        android:id="@+id/textViewFinalCost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_result_placeholder"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/resultText"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Save and History Buttons (shown after calculation) -->
+        <LinearLayout
+            android:id="@+id/layoutActionButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSave"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="@string/btn_save"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/textWhite"
+                android:backgroundTint="@color/buttonSave"
+                android:layout_marginEnd="8dp"
+                app:cornerRadius="10dp"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonHistory"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="@string/btn_history"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/textWhite"
+            android:backgroundTint="@color/buttonHistory"
+            app:cornerRadius="10dp"/>
+
+        <!-- Bottom spacing -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="24dp"/>
+
+    </LinearLayout>
+</ScrollView>

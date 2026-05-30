@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".About">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- ── STUDENT PROFILE CARD ── -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="24dp">
+
+                <!-- Student Photo -->
+                <ImageView
+                    android:id="@+id/imageViewStudent"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:src="@drawable/student_photo"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/circle_background"
+                    android:clipToOutline="true"
+                    android:layout_marginBottom="16dp"
+                    android:contentDescription="Student Photo"/>
+
+                <!-- Full Name -->
+                <TextView
+                    android:id="@+id/textViewStudentName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RAJA SYAHIRAH AQILA BINTI RAJA SAMSUL BAHRI"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textWhite"
+                    android:layout_marginBottom="6dp"/>
+
+                <!-- Student ID -->
+                <TextView
+                    android:id="@+id/textViewStudentId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Student ID: 2025160145"
+                    android:textSize="14sp"
+                    android:textColor="#B3FFFFFF"
+                    android:layout_marginBottom="4dp"/>
+
+                <!-- Course -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ICT602 - Mobile Technology and Development"
+                    android:textSize="13sp"
+                    android:textColor="#B3FFFFFF"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ── APP INFO CARD ── -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/cardBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About This App"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Electricity Bill Estimator helps Malaysian households estimate their monthly electricity bill based on Tenaga Nasional Berhad (TNB) tariff rates. Users can calculate charges by entering their monthly usage in kWh and applying available rebate percentages."
+                    android:textSize="14sp"
+                    android:textColor="@color/textSecondary"
+                    android:lineSpacingExtra="4dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimaryLight"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Copyright -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="© 2026 RAJA SYAHIRAH AQILA. All rights reserved."
+                    android:textSize="13sp"
+                    android:textColor="@color/textSecondary"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimaryLight"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- GitHub URL — Clickable -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔗 Source Code"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textPrimary"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:id="@+id/textViewGithubUrl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="https://github.com/YOURUSERNAME/YOURREPO"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ── USER GUIDE CARD ── -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/cardBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📖 How To Use This App"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="14dp"/>
+
+                <!-- Step 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:text="1"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textWhite"
+                        android:background="@drawable/circle_background"
+                        android:gravity="center"
+                        android:layout_marginEnd="12dp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Select Your Month"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/textPrimary"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tap the month dropdown and select the billing month (January to December)."
+                            android:textSize="13sp"
+                            android:textColor="@color/textSecondary"
+                            android:lineSpacingExtra="2dp"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Step 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:text="2"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textWhite"
+                        android:background="@drawable/circle_background"
+                        android:gravity="center"
+                        android:layout_marginEnd="12dp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Enter Electricity Usage"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/textPrimary"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Type your electricity consumption in kWh. Valid range is 1 to 1000 kWh."
+                            android:textSize="13sp"
+                            android:textColor="@color/textSecondary"
+                            android:lineSpacingExtra="2dp"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Step 3 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:text="3"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textWhite"
+                        android:background="@drawable/circle_background"
+                        android:gravity="center"
+                        android:layout_marginEnd="12dp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Set Rebate Percentage"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/textPrimary"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Slide the rebate bar to set your rebate between 0% and 5%."
+                            android:textSize="13sp"
+                            android:textColor="@color/textSecondary"
+                            android:lineSpacingExtra="2dp"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Step 4 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:text="4"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textWhite"
+                        android:background="@drawable/circle_background"
+                        android:gravity="center"
+                        android:layout_marginEnd="12dp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Press Calculate"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/textPrimary"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tap the Calculate button to see your Total Charges and Final Cost after rebate."
+                            android:textSize="13sp"
+                            android:textColor="@color/textSecondary"
+                            android:lineSpacingExtra="2dp"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Step 5 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:text="5"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textWhite"
+                        android:background="@drawable/circle_background"
+                        android:gravity="center"
+                        android:layout_marginEnd="12dp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Save Your Record"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/textPrimary"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Press Save Record to store the result. You can view, edit or delete saved records in Bill History."
+                            android:textSize="13sp"
+                            android:textColor="@color/textSecondary"
+                            android:lineSpacingExtra="2dp"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Step 6 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:text="6"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textWhite"
+                        android:background="@drawable/circle_background"
+                        android:gravity="center"
+                        android:layout_marginEnd="12dp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="View Bill History"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/textPrimary"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tap View History to see all saved records. Tap any record to view details, edit or delete it."
+                            android:textSize="13sp"
+                            android:textColor="@color/textSecondary"
+                            android:lineSpacingExtra="2dp"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Bottom spacing -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -88,40 +88,42 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public List<BillRecord> getAllRecords() {
         List<BillRecord> recordList = new ArrayList<>();
 
-        // SQL query to get ALL rows, newest first
+        // Order by month in calendar order (Jan=1, Feb=2... Dec=12)
+        // We use CASE to convert month name to number for sorting
         String selectQuery = "SELECT * FROM " + TABLE_NAME
-                + " ORDER BY " + COLUMN_ID + " DESC";
+                + " ORDER BY CASE " + COLUMN_MONTH
+                + " WHEN 'January'   THEN 1"
+                + " WHEN 'February'  THEN 2"
+                + " WHEN 'March'     THEN 3"
+                + " WHEN 'April'     THEN 4"
+                + " WHEN 'May'       THEN 5"
+                + " WHEN 'June'      THEN 6"
+                + " WHEN 'July'      THEN 7"
+                + " WHEN 'August'    THEN 8"
+                + " WHEN 'September' THEN 9"
+                + " WHEN 'October'   THEN 10"
+                + " WHEN 'November'  THEN 11"
+                + " WHEN 'December'  THEN 12"
+                + " END ASC, " + COLUMN_ID + " ASC";
 
         SQLiteDatabase db = this.getReadableDatabase();
-
-        // Cursor is like a pointer that moves through results
         Cursor cursor = db.rawQuery(selectQuery, null);
 
-        // Loop through each row
         if (cursor.moveToFirst()) {
             do {
-                // Read each column by its name
-                int    id    = cursor.getInt(
-                        cursor.getColumnIndexOrThrow(COLUMN_ID));
-                String month = cursor.getString(
-                        cursor.getColumnIndexOrThrow(COLUMN_MONTH));
-                double unit  = cursor.getDouble(
-                        cursor.getColumnIndexOrThrow(COLUMN_UNIT));
-                int rebate   = cursor.getInt(
-                        cursor.getColumnIndexOrThrow(COLUMN_REBATE));
-                double total = cursor.getDouble(
-                        cursor.getColumnIndexOrThrow(COLUMN_TOTAL_CHARGES));
-                double final_ = cursor.getDouble(
-                        cursor.getColumnIndexOrThrow(COLUMN_FINAL_COST));
+                int    id     = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID));
+                String month  = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_MONTH));
+                double unit   = cursor.getDouble(cursor.getColumnIndexOrThrow(COLUMN_UNIT));
+                int    rebate = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_REBATE));
+                double total  = cursor.getDouble(cursor.getColumnIndexOrThrow(COLUMN_TOTAL_CHARGES));
+                double final_ = cursor.getDouble(cursor.getColumnIndexOrThrow(COLUMN_FINAL_COST));
 
-                // Create a BillRecord object and add to list
                 recordList.add(new BillRecord(
                         id, month, unit, rebate, total, final_));
 
-            } while (cursor.moveToNext()); // Move to next row
+            } while (cursor.moveToNext());
         }
 
-        // Always close cursor and database
         cursor.close();
         db.close();
 

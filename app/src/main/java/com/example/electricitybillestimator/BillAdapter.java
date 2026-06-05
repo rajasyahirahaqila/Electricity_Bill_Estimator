@@ -32,12 +32,11 @@ public class BillAdapter extends ArrayAdapter<BillRecord> {
     }
 
     // ─── Called for EACH row in the list ────────────────────────
-    // position = which row (0 = first, 1 = second, etc.)
     @Override
     public View getView(int position, View convertView,
                         ViewGroup parent) {
 
-        // Reuse existing row view if available (for performance)
+        // Reuse existing row view if available (performance)
         if (convertView == null) {
             LayoutInflater inflater = LayoutInflater.from(context);
             convertView = inflater.inflate(
@@ -55,7 +54,7 @@ public class BillAdapter extends ArrayAdapter<BillRecord> {
         TextView textFinalCost = convertView.findViewById(
                 R.id.textViewListFinalCost);
 
-        // Fill the TextViews with data from the record
+        // Fill TextViews with data from the record
         textMonth.setText(record.getMonth());
 
         textUnit.setText(String.format(Locale.getDefault(),

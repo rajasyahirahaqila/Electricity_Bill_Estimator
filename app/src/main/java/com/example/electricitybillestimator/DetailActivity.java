@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.Locale;
+import android.view.Menu;
+import android.os.Build;
+import android.view.View;
+import androidx.core.content.ContextCompat;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -33,6 +37,14 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        // Make status bar icons dark/visible
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            getWindow().setStatusBarColor(
+                    ContextCompat.getColor(this, R.color.backgroundColor));
+        }
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -58,6 +70,26 @@ public class DetailActivity extends AppCompatActivity {
         initViews();
         loadRecord();
         setupButtons();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add(0, 1, 0, "About");
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == 1) {
+            Intent intent = new Intent(this, About.class);
+            startActivity(intent);
+            return true;
+        }
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     // ─── Connect variables to XML views ────────────────────────
@@ -163,19 +195,14 @@ public class DetailActivity extends AppCompatActivity {
         int result = databaseHelper.deleteRecord(recordId);
 
         if (result > 0) {
-            // Success
-            Toast.makeText(this,
+            Toast.makeText(DetailActivity.this,
                     "✅ Record deleted successfully!",
-                    Toast.LENGTH_SHORT).show();
-
-            // Go back to HistoryActivity
+                    Toast.LENGTH_LONG).show();
             finish();
-
         } else {
-            // Failed
-            Toast.makeText(this,
+            Toast.makeText(DetailActivity.this,
                     "❌ Failed to delete record.",
-                    Toast.LENGTH_SHORT).show();
+                    Toast.LENGTH_LONG).show();
         }
     }
 
@@ -187,15 +214,5 @@ public class DetailActivity extends AppCompatActivity {
         if (currentRecord != null) {
             loadRecord();
         }
-    }
-
-    // ─── Back arrow ─────────────────────────────────────────────
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            finish();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 }

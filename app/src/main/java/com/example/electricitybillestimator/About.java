@@ -7,17 +7,28 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.os.Build;
+import android.view.View;
+import androidx.core.content.ContextCompat;
 
 public class About extends AppCompatActivity {
 
     // ─── GitHub URL — change this to your real GitHub URL ──────
     private static final String GITHUB_URL =
-            "https://github.com/YOURUSERNAME/YOURREPO";
+            "https://github.com/rajasyahirahaqila/Electricity_Bill_Estimator";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about);
+
+        // Make status bar icons dark/visible
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            getWindow().setStatusBarColor(
+                    ContextCompat.getColor(this, R.color.backgroundColor));
+        }
 
         // Show back arrow
         if (getSupportActionBar() != null) {

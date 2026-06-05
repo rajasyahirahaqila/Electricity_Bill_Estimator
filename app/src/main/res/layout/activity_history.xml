@@ -53,7 +53,7 @@
         android:background="@color/cardBackground"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:paddingTop="14dp"
+        android:paddingTop="32dp"
         android:paddingBottom="14dp"
         android:gravity="center_vertical"
         android:visibility="gone">

@@ -296,19 +296,6 @@
             android:orientation="horizontal"
             android:visibility="gone">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonSave"
-                android:layout_width="0dp"
-                android:layout_height="52dp"
-                android:layout_weight="1"
-                android:text="@string/btn_save"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:textColor="@color/textWhite"
-                android:backgroundTint="@color/buttonSave"
-                android:layout_marginEnd="8dp"
-                app:cornerRadius="10dp"/>
-
         </LinearLayout>
 
         <com.google.android.material.button.MaterialButton

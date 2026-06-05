@@ -13,6 +13,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.cardview.widget.CardView;
 import java.util.Locale;
+import android.content.Intent;
+import android.view.Menu;
+import android.os.Build;
+import androidx.core.content.ContextCompat;
 
 public class EditActivity extends AppCompatActivity {
 
@@ -52,6 +56,14 @@ public class EditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
 
+        // Make status bar icons dark/visible
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            getWindow().setStatusBarColor(
+                    ContextCompat.getColor(this, R.color.backgroundColor));
+        }
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle("Edit Record");
@@ -78,6 +90,26 @@ public class EditActivity extends AppCompatActivity {
         setupRebateSeekBar();
         loadExistingRecord();
         setupButtons();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add(0, 1, 0, "About");
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == 1) {
+            Intent intent = new Intent(this, About.class);
+            startActivity(intent);
+            return true;
+        }
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     // ─── Connect variables to XML views ────────────────────────
@@ -285,17 +317,14 @@ public class EditActivity extends AppCompatActivity {
         int result = databaseHelper.updateRecord(currentRecord);
 
         if (result > 0) {
-            Toast.makeText(this,
+            Toast.makeText(EditActivity.this,
                     "✅ Record updated successfully!",
-                    Toast.LENGTH_SHORT).show();
-
-            // Go back to DetailActivity
+                    Toast.LENGTH_LONG).show();
             finish();
-
         } else {
-            Toast.makeText(this,
+            Toast.makeText(EditActivity.this,
                     "❌ Failed to update record.",
-                    Toast.LENGTH_SHORT).show();
+                    Toast.LENGTH_LONG).show();
         }
     }
 
@@ -323,15 +352,5 @@ public class EditActivity extends AppCompatActivity {
         }
 
         return charges;
-    }
-
-    // ─── Back arrow ─────────────────────────────────────────────
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            finish();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 }
